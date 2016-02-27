@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html id="main">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+         <script src="js/jquery.min.js"></script>
+        <link href="css/main.css" rel="stylesheet">
+        <title></title>
+    </head>
+    <body>
+        <div class="row">
+	  <div class="row space">
+	  </div>
+	  <div class="row menu-items">
+	  <button id="eliri2" class="eliri" onClick="eliri2()">
+	      < Eliri
+	    </button>
+	    <div class="row button item agordoj">
+	       <form onchange="changeLingvo()">
+  <input type="radio" name="lingvo" value="fa"> فارسی<br>
+  <input type="radio" name="lingvo" value="eo">Esperanto<br>
+</form> 
+	      
+	    </div>
+	    <div class="row button item agordoj">
+	      Grandeco de tiparo
+	      <form>
+	      <input type="text" id="fonttextbox" onchange="changeFontSize()">
+	      </form>
+	    </div>
+	    <div class="row">
+	    </div>
+	  </div>
+        
+         </div>
+          <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+	 <script type="text/javascript" src="js/main.js"></script>
+	 
+        <script type="text/javascript">
+            app.initiadivze();
+        </script>
+    </body>
+</html>
