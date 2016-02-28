@@ -1,3 +1,6 @@
+document.addEventListener('deviceready', function() {
+  navigator.splashscreen.hide();
+});
 function renkontoj() {
 window.location.href = "renkontoj.html";
 }
