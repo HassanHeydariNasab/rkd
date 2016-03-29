@@ -16,7 +16,7 @@ var url=window.location.href;
 if (url.indexOf('?n=') > -1){
     n = url.split('?')[1].replace('n=','');
     if (lingvo=='fa'){
-	document.body.innerHTML = document.body.innerHTML.replace('Eliri', 'بازگشت')
+	document.body.innerHTML = document.body.innerHTML.replace('Reveno', 'بازگشت')
     }
     if (n == '99'){
 	function eliri(){
@@ -25,14 +25,16 @@ if (url.indexOf('?n=') > -1){
     }
     var faView = document.getElementById("fa")
     var eoView = document.getElementById("eo")
-    $.get('renkontoFa'+n+'.html', function(dataFa){
-	faView.innerHTML=dataFa;
+    $.get('fa/renkontoFa'+n+'.html', function(dataFa){
+	faView.innerHTML=dataFa+"<br><br>";
     }
 	 );
-    $.get('renkontoEo'+n+'.html', function(dataEo){
+    $.get('eo/renkontoEo'+n+'.html', function(dataEo){
 	eoView.innerHTML=dataEo;
     }
 	 );
+    var audio = $(".player");
+    audio.attr("src", "audio/"+n+".mp3")
     var fontSize = window.localStorage.getItem("fontSize");
     eoView.style.fontSize = fontSize+'px';
     faView.style.fontSize = fontSize+'px';
@@ -59,16 +61,30 @@ function eliri3(){
 navigator.app.exitApp();
 }
 function exitAppPopup() {
-    navigator.notification.confirm(
-        'Ĉu vi vere volas eliri?'
-        , function(button) {
-            if (button == 2) {
-                navigator.app.exitApp();
-            } 
-        }
-        , 'Eliri'
-        , 'Ne,Jes'
-    );  
+    if(lingvo=='fa'){
+	navigator.notification.confirm(
+            'Ĉu vi vere volas eliri?'
+            , function(button) {
+		if (button == 2) {
+                    navigator.app.exitApp();
+		} 
+            }
+            , 'Eliri'
+            , 'Ne,Jes'
+	);
+    }
+    else {
+	navigator.notification.confirm(
+            'آیا واقعاً می‌خواهید خارج شوید؟'
+            , function(button) {
+		if (button == 2) {
+                    navigator.app.exitApp();
+		} 
+            }
+            , 'خروج'
+            , 'خیر,بله'
+	);
+    }	
     return false;
 }
 document.addEventListener("backbutton", function() {
@@ -98,7 +114,7 @@ window.localStorage.setItem("fontSize", s);
 
 
 if ((url.indexOf('agordoj') > -1) && (lingvo=='fa')){
-document.body.innerHTML = document.body.innerHTML.replace('Eliri', 'بازگشت').replace('Grandeco de tiparo','اندازه‌ی فونت')
+document.body.innerHTML = document.body.innerHTML.replace('Reveno', 'بازگشت').replace('Grandeco de tiparo','اندازه‌ی فونت')
 }
 
 if (url.indexOf('agordoj') > -1){
@@ -112,9 +128,9 @@ if (url.indexOf('agordoj') > -1){
     }
 }
 if ((url.indexOf('index') > -1) && (lingvo=='fa')){
-document.body.innerHTML = document.body.innerHTML.replace('Pri ni', 'درباره‌ی ما').replace('Agordoj', 'تنظیمات').replace('Eliri el la aplikaĵo', 'خروج').replace('Legaĵo','مطالعه');
+document.body.innerHTML = document.body.innerHTML.replace('Pri ni', 'درباره‌ی ما').replace('Agordoj', 'تنظیمات').replace('Eliri', 'خروج').replace('Legaĵo','مطالعه');
 }
 if ((url.indexOf('renkontoj') > -1) && (lingvo=='fa')){
-document.body.innerHTML = document.body.innerHTML.replace('Eliri', 'بازگشت').replace('Unua renkonto','دیدار اول').replace('Dua renkonto','دیدار دوم').replace('Tria renkonto','دیدار سوم').replace('Kvara renkonto','دیدار چهارم').replace('Kvina renkonto','دیدار پنجم').replace('Sesa renkonto','دیدار ششم').replace('Sepa renkonto','دیدار هفتم').replace('Oka renkonto','دیدار هشتم').replace('Naŭa renkonto','دیدار نهم').replace('Deka renkonto','دیدار دهم').replace('Dekunua renkonto','دیدار یازدهم').replace('Dekdua renkonto','دیدار دوازدهم').replace('Dektria renkonto','دیدار سیزدهم').replace('Dekkvara renkonto','دیدار چهاردهم').replace('Dekkvina renkonto','دیدار پانزدهم').replace('Deksesa renkonto','دیدار شانزدهم').replace('Deksepa renkonto','دیدار هفدهم')
+document.body.innerHTML = document.body.innerHTML.replace('Reveno', 'بازگشت').replace('Unua renkonto','دیدار اول').replace('Dua renkonto','دیدار دوم').replace('Tria renkonto','دیدار سوم').replace('Kvara renkonto','دیدار چهارم').replace('Kvina renkonto','دیدار پنجم').replace('Sesa renkonto','دیدار ششم').replace('Sepa renkonto','دیدار هفتم').replace('Oka renkonto','دیدار هشتم').replace('Naŭa renkonto','دیدار نهم').replace('Deka renkonto','دیدار دهم').replace('Dekunua renkonto','دیدار یازدهم').replace('Dekdua renkonto','دیدار دوازدهم').replace('Dektria renkonto','دیدار سیزدهم').replace('Dekkvara renkonto','دیدار چهاردهم').replace('Dekkvina renkonto','دیدار پانزدهم').replace('Deksesa renkonto','دیدار شانزدهم').replace('Deksepa renkonto','دیدار هفدهم')
 }
 

@@ -54,6 +54,7 @@ height: 2vh;
 width: 60vw !important;
 direction: ltr !important;
 opacity: 0.95;
+padding: 4px 10px 5px 5px !important;
  }
 .simpleplayer-play-control { 
 background-image: url('../images/play.png');
@@ -62,7 +63,7 @@ background-image: url('../images/play.png');
 direction: rtl;
 margin-right: 0px;
 margin-top:-10px;
-height: 5vh;
+/*height: 5vh;*/
 font-size:14px;
 }
 
@@ -87,9 +88,9 @@ direction: ltr;
 }
 .eliri {
 padding: 0px !important;
-margin-top: 0px !important;
+margin-top: 2px !important;
 background: #52b152;
-width: 25vw;
+width: 28vw;
 border: solid #61aa67;
 border-radius: 5px;
 color: white;
