@@ -12,6 +12,12 @@ window.location.href = "agordoj.html";
 }
 var fontSize = window.localStorage.getItem("fontSize");
 var lingvo = window.localStorage.getItem("lingvo");
+if (fontSize==null){
+fontSize="12"
+}
+if (lingvo==null){
+lingvo="eo"
+}
 var url=window.location.href;
 if (url.indexOf('?n=') > -1){
     n = url.split('?')[1].replace('n=','');
@@ -63,18 +69,6 @@ navigator.app.exitApp();
 function exitAppPopup() {
     if(lingvo=='fa'){
 	navigator.notification.confirm(
-            'Ĉu vi vere volas eliri?'
-            , function(button) {
-		if (button == 2) {
-                    navigator.app.exitApp();
-		} 
-            }
-            , 'Eliri'
-            , 'Ne,Jes'
-	);
-    }
-    else {
-	navigator.notification.confirm(
             'آیا واقعاً می‌خواهید خارج شوید؟'
             , function(button) {
 		if (button == 2) {
@@ -83,6 +77,18 @@ function exitAppPopup() {
             }
             , 'خروج'
             , 'خیر,بله'
+	);
+    }
+    else {
+	navigator.notification.confirm(
+            'Ĉu vi vere volas eliri?'
+            , function(button) {
+		if (button == 2) {
+                    navigator.app.exitApp();
+		} 
+            }
+            , 'Eliri'
+            , 'Ne,Jes'
 	);
     }	
     return false;
