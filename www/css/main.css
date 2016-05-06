@@ -30,7 +30,7 @@ background: linear-gradient(to right, #52b152 33%,#008a00 88%,#0e7000 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#52b152', endColorstr='#0e7000',GradientType=1 );
 }
 html {
-background: url("../images/1.jpg") no-repeat center fixed;
+background: url("../images/1.jpg") repeat center fixed;
 background-size: cover;
 font-family: 'vazir','ubuntum';
 font-size: 26px;
