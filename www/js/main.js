@@ -13,7 +13,7 @@ window.location.href = "agordoj.html";
 var fontSize = window.localStorage.getItem("fontSize");
 var lingvo = window.localStorage.getItem("lingvo");
 if (fontSize==null){
-fontSize="12"
+fontSize="14"
 }
 if (lingvo==null){
 lingvo="eo"
@@ -40,7 +40,7 @@ if (url.indexOf('?n=') > -1){
     }
 	 );
     var audio = $(".player");
-    audio.attr("src", "audio/"+n+".mp3")
+    audio.attr("src", cordova.file.applicationDirectory + 'audio/'+n+'.mp3')
     var fontSize = window.localStorage.getItem("fontSize");
     eoView.style.fontSize = fontSize+'px';
     faView.style.fontSize = fontSize+'px';
