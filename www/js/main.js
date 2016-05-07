@@ -40,7 +40,7 @@ if (url.indexOf('?n=') > -1){
     }
 	 );
     var audio = $(".player");
-    audio.attr("src", cordova.file.applicationDirectory + 'audio/'+n+'.mp3')
+    audio.attr("src", 'file:///android_asset/www/audio/'+n+'.mp3')
     var fontSize = window.localStorage.getItem("fontSize");
     eoView.style.fontSize = fontSize+'px';
     faView.style.fontSize = fontSize+'px';
