@@ -40,7 +40,7 @@ if (url.indexOf('?n=') > -1){
     }
 	 );
     var audio = $(".player");
-    audio.attr("src", 'file:///android_asset/www/audio/'+n+'.mp3')
+    audio.attr("src", 'audio/'+n+'.mp3')
     var fontSize = window.localStorage.getItem("fontSize");
     eoView.style.fontSize = fontSize+'px';
     faView.style.fontSize = fontSize+'px';
@@ -110,6 +110,7 @@ document.addEventListener("backbutton", function() {
 function changeLingvo(){
 var l = document.querySelector('input[name="lingvo"]:checked').value;
 window.localStorage.setItem("lingvo", l);
+window.location.href = "agordoj.html";
 }
 
 function changeFontSize(){
